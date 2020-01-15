@@ -1,0 +1,36 @@
+//----- bagian 1
+2 folder penting yaitu 
+- public
+- app
+
+folder public untuk hal hal yg bisa diakses oleh semua user
+folder app adalah folder yang menyimpan mvc
+
+folder app > core
+core adalah folder yg menyimpan file file penting atau inti mvc kita
+
+
+//------- bagian 2
+JALUR CERITA
+
+1. pertama masuk ke folder public > index.php
+2. folder public > index.php memanggil init.php yang ada di dalam folder app dan mengaktifkan class App yang ada di core serta memulai session
+3. folder app > init.php memanggil semua yang ada di folder core
+4. folder core > App.php  pertama tama mengatur default url. terus memprotecd control method dan parameter didalamnya terdapat 2 fungsi
+    
+    a) fungsi parseURL untuk mendaapatkan url dengan kondisi jika ada. 
+    kemudian url di rtrim untuk menghilangkan slahs atau yg dingininkan
+    kemudian di filter_var untuk menghilangkan karakter-karakter aneh yang dimasukan
+    kemudian di explode untuk memecah bagianya
+    dan dikembalikan nilainya
+
+    b) function utama construct pertama memmanggil fungsi parseURL. 
+    kemudian di  cek jika ada file  maka dia membuat nilai controller baru dan menghilangkan controlernya dari url
+    kemudian dia memanggil controller yang anda di folder controllers  dengan contrroler yg dicari
+    kemudian controller dibuat dengan controller yang baru . 
+    kemudian menghapus method dan parameter
+
+
+
+
+
